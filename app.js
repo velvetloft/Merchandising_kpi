@@ -1,4 +1,3 @@
-
 /* OPS KPI Dashboard
  * Reads data/ops_kpi_data.json produced by OPS_KPI.py.
  * Displays only what is in that file: no hardcoded stores, no mock rows,
@@ -968,9 +967,30 @@
     Object.keys(payload.reports || {}).forEach(function (key) {
       var rep = payload.reports[key];
       var days = rep.periods && rep.periods.day;
-      if (!days || days.length < 1) return; // nothing left to fall back to
+      if (!days || days.length < 2) return; // nothing left to fall back to
       var dropped = days.shift();
       rep.columns = rep.columns.filter(function (c) { return c.key !== dropped.key; });
+    });
+  }
+
+  /* Merchandising: instead of always dropping the freshest day, drop only
+     the leading day columns that have no data at all in that report. So the
+     newest loaded day is shown, and a day the database hasn't loaded yet is
+     never shown as an empty column. Set window.DASHBOARD_LATEST_DAY = "auto". */
+  function dropEmptyLatestDays(payload) {
+    Object.keys(payload.reports || {}).forEach(function (key) {
+      var rep = payload.reports[key];
+      var days = rep.periods && rep.periods.day;
+      if (!days) return;
+      while (days.length > 1) {
+        var first = days[0];
+        var hasData = rep.data.some(function (r) {
+          return r[first.key] !== null && r[first.key] !== undefined;
+        });
+        if (hasData) break;
+        days.shift();
+        rep.columns = rep.columns.filter(function (c) { return c.key !== first.key; });
+      }
     });
   }
 
@@ -987,7 +1007,8 @@
         var problem = checkPayload(payload);
         if (problem) { showError(problem); return; }
 
-        applyD2Cutoff(payload);
+        if (window.DASHBOARD_LATEST_DAY === "auto") dropEmptyLatestDays(payload);
+        else applyD2Cutoff(payload);
         state.payload = payload;
         var order = payload.metadata.report_order;
         $("loading").hidden = true;

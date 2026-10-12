@@ -1,8 +1,8 @@
 """
-ops_kpi_json.py
-===============
+merch_kpi_json.py
+=================
 
-JSON data layer for the OPS KPI reporting system.
+JSON data layer for the Merchandising KPI reporting system.
 
 This module does NOT calculate any KPI. It is a pure serialisation /
 validation layer: it takes the SAME pandas DataFrames that OPS_KPI.py
@@ -267,7 +267,7 @@ def build_payload(report_blocks: dict, reporting_date, excluded_stores,
     generated_at = generated_at or datetime.now()
     return {
         "metadata": {
-            "report_name": "OPS KPI Dashboard",
+            "report_name": "Merchandising KPI Dashboard",
             "schema_version": SCHEMA_VERSION,
             "generated_at": generated_at.isoformat(timespec="seconds"),
             "last_successful_refresh": generated_at.isoformat(timespec="seconds"),
@@ -387,7 +387,7 @@ def write_atomic(path: str, payload: dict) -> None:
     text = json.dumps(payload, ensure_ascii=False, allow_nan=False, indent=1)
 
     fd, tmp_path = tempfile.mkstemp(
-        prefix=".ops_kpi_data_", suffix=".json.tmp", dir=directory
+        prefix=".merch_kpi_data_", suffix=".json.tmp", dir=directory
     )
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as handle:

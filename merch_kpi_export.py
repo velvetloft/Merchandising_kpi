@@ -274,6 +274,12 @@ def build_blocks(collected: dict, today: date | None = None):
             df.insert(1, "store_name", _code(df["store_code"]).map(names))
         df["store_code"] = df["store_code"].astype(str).str.strip()
 
+        # renamed store: drop the old code's empty row when the new code exists
+        present = set(_code(df["store_code"]))
+        stale = [old for old, new in STORE_CODE_ALIASES.items() if new in present]
+        if stale:
+            df = df[~_code(df["store_code"]).isin(stale)].copy()
+
         if kpi["key"] == "moh":
             df["target_moh"] = _code(df["store_code"]).map(moh_targets)
             missing = df.loc[df["target_moh"].isna(), "store_code"].tolist()
@@ -297,11 +303,23 @@ def build_blocks(collected: dict, today: date | None = None):
     return blocks, notes
 
 
+def _reporting_date(blocks: dict, today: date) -> date:
+    """Freshest day that EVERY report has data for (MINISO total row)."""
+    stalest = None
+    for block in blocks.values():
+        mini = next(r for r in block["data"] if r["_row_type"] == "miniso_total")
+        idxs = [p["index"] for p in block["periods"].get("day", [])
+                if mini.get(p["key"]) is not None]
+        if idxs:
+            stalest = min(idxs) if stalest is None else max(stalest, min(idxs))
+    return today - timedelta(days=stalest or 1)
+
+
 def export(collected: dict, json_path: str, today: date | None = None) -> list:
     """Build, validate and atomically write the dashboard JSON. Returns warnings."""
     today = today or date.today()
     blocks, notes = build_blocks(collected, today)
-    payload = jl.build_payload(blocks, today, [])
+    payload = jl.build_payload(blocks, _reporting_date(blocks, today), [])
     warnings = jl.validate_payload(payload, list(blocks))
     jl.write_atomic(json_path, payload)
     return notes + warnings
