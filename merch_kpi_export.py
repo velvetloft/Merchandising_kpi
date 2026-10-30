@@ -53,7 +53,7 @@ _NO_SPOC_VALUES = {"", "NA", "N/A", "NAN", "NONE", "NULL", "-"}
 
 # Colour rules are data, evaluated by the dashboard (app.js statusFor).
 TIER_A = {"type": "tier", "scale": 100, "green_above": 94.99, "yellow_from": 87.99}
-TIER_B = {"type": "tier", "scale": 100, "green_above": 87.99, "yellow_from": 78.99}
+TIER_B = {"type": "tier", "scale": 100, "green_above": 87.99, "yellow_from": 7.99}
 MOH_RULE = {"type": "moh_variance"}
 INV_RULE = {"type": "moh_variance", "source_report": "moh"}   # same colour as MOH
 
@@ -65,7 +65,7 @@ KPIS = [
      "display": {"scale": 100, "decimals": 0, "suffix": "%"},
      "value_format": "percent0", "color_rule": TIER_A},
     {"key": "b_class", "prefix": "b_class", "name": "B-Class",
-     "description": "B-class SKU availability. Green above 87.99%, yellow 78.99-87.99%, orange below.",
+     "description": "B-class SKU availability. Green above 87.99%, yellow 79.99-87.99%, orange below.",
      "rename": "availability", "rollup": "mean", "labels": "iso",
      "display": {"scale": 100, "decimals": 0, "suffix": "%"},
      "value_format": "percent0", "color_rule": TIER_B},

@@ -657,11 +657,19 @@
       if (isD1Label(c.label) || isD1Label(c.key)) return false;
       return true;
     });
-    // Store code first, Store name second, everything else in source order.
+    
+    // Store code first, Store name second, Target third, then all other columns.
     var codeCols = visible.filter(function (c) { return c.key === "store_code"; });
     var nameCols = visible.filter(function (c) { return c.key === "store_name"; });
-    var otherCols = visible.filter(function (c) { return c.key !== "store_code" && c.key !== "store_name"; });
-    visible = codeCols.concat(nameCols, otherCols);
+    var targetCols = visible.filter(function (c) { return c.role === "target"; });
+    var otherCols = visible.filter(function (c) {
+      return c.key !== "store_code" &&
+         c.key !== "store_name" &&
+         c.role !== "target";
+    });
+
+    visible = codeCols.concat(nameCols, targetCols, otherCols);
+
 
     // #5: the frozen column is Store name (falls back to the first
     // column only if a report has no store_name column).
