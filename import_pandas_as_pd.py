@@ -51,7 +51,7 @@ timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 reports = [
     {
         "folder": "mtd_sku_sale_vs_soh",
-        "file": "mtd_sku_sale_vs_soh_2_nov.xlsx",
+        "file": "mtd_sku_sale_vs_soh_3_nov.xlsx",
         "query": """
         WITH mtd_bounds AS (
 
@@ -218,7 +218,7 @@ ORDER BY
     },
     {
         "folder": "new_sku_sales",
-        "file": "new_sku_sales_2_nov.xlsx",
+        "file": "new_sku_sales_3_nov.xlsx",
         "query": """
         WITH date_bounds AS (
 
@@ -539,7 +539,7 @@ ORDER BY
      },
      {
         "folder": "moh",
-        "file": "moh_2_nov.xlsx",
+        "file": "moh_3_nov.xlsx",
         "query": """
         WITH date_bounds AS (
 
@@ -984,7 +984,7 @@ ORDER BY
     },
         {
             "folder": "inventory_value",
-            "file": "inventory_value_mrp_2_nov.xlsx",
+            "file": "inventory_value_mrp_3_nov.xlsx",
             "query": """
     WITH inv AS (
     
@@ -1124,7 +1124,7 @@ ORDER BY
         },
       {
         "folder": "inventory_value",
-        "file": "inventory_value_cp_2_nov.xlsx",
+        "file": "inventory_value_cp_3_nov.xlsx",
         "query": """
            WITH price_master AS (
 
@@ -1506,7 +1506,7 @@ ORDER BY
 
       {
         "folder": "new_sku_availability",
-        "file": "new_sku_availability_2_nov.xlsx",
+        "file": "new_sku_availability_3_nov.xlsx",
         "query": """
         WITH calendar_dates AS (
 
@@ -2027,7 +2027,7 @@ ORDER BY
       },
       {
         "folder": "b_class",
-        "file": "b_class_2_nov.xlsx",
+        "file": "b_class_3_nov.xlsx",
         "query": """
         WITH date_limits AS (
         
@@ -2773,7 +2773,7 @@ ORDER BY
       },
       {
          "folder": "a_class",
-        "file": "a_class_2_nov.xlsx",
+        "file": "a_class_3_nov.xlsx",
         "query": """
       WITH date_limits AS (
 
