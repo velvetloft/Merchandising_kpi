@@ -1,10 +1,3 @@
-/* OPS KPI Dashboard
- * Reads data/ops_kpi_data.json produced by OPS_KPI.py.
- * Displays only what is in that file: no hardcoded stores, no mock rows,
- * no thresholds beyond the targets the source data already carries.
- */
-
-/* Apply the saved theme immediately so there is no flash of the wrong theme. */
 (function () {
   try {
     var t = localStorage.getItem("opsKpiTheme");
