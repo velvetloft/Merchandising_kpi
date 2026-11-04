@@ -2,8 +2,8 @@
  "metadata": {
   "report_name": "Merchandising KPI Dashboard",
   "schema_version": "1.0",
-  "generated_at": "2026-11-04T11:38:39",
-  "last_successful_refresh": "2026-11-04T11:38:39",
+  "generated_at": "2026-11-04T11:52:40",
+  "last_successful_refresh": "2026-11-04T11:52:40",
   "reporting_date": "2026-11-03",
   "status": "success",
   "refresh_mode": "atomic_full",
@@ -3082,7 +3082,7 @@
      "m1_moh": 1.39,
      "m2_moh": 1.05,
      "m3_moh": 1.24,
-     "target_moh": 1.258,
+     "target_moh": 1.2579937220211737,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3126,7 +3126,7 @@
      "m1_moh": 2.23,
      "m2_moh": 1.96,
      "m3_moh": 1.48,
-     "target_moh": 1.4985,
+     "target_moh": 1.4984895379951366,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3148,7 +3148,7 @@
      "m1_moh": 1.76,
      "m2_moh": 1.45,
      "m3_moh": 1.56,
-     "target_moh": 1.167,
+     "target_moh": 1.1669799135046086,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3170,7 +3170,7 @@
      "m1_moh": 1.18,
      "m2_moh": 1.09,
      "m3_moh": 2.14,
-     "target_moh": 0.9399,
+     "target_moh": 0.8173234498084296,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3192,7 +3192,7 @@
      "m1_moh": 2.48,
      "m2_moh": 2.02,
      "m3_moh": 2.0,
-     "target_moh": 2.0815,
+     "target_moh": 2.4487922285475707,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3214,7 +3214,7 @@
      "m1_moh": 1.62,
      "m2_moh": 1.13,
      "m3_moh": 1.23,
-     "target_moh": 1.0353,
+     "target_moh": 0.900220273829572,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3236,7 +3236,7 @@
      "m1_moh": 1.6,
      "m2_moh": 1.52,
      "m3_moh": 1.66,
-     "target_moh": 1.3037,
+     "target_moh": 1.3037153926579372,
      "_row_type": "store",
      "_spoc": "Ankit"
     },
@@ -3324,7 +3324,7 @@
      "m1_moh": 1.9036363636363633,
      "m2_moh": 1.668181818181818,
      "m3_moh": 1.750909090909091,
-     "target_moh": 1.2985363636363636,
+     "target_moh": 1.3085013198513116,
      "_row_type": "spoc_total",
      "_spoc": "Ankit"
     },
@@ -3346,7 +3346,7 @@
      "m1_moh": 1.49,
      "m2_moh": 0.86,
      "m3_moh": 1.1,
-     "target_moh": 1.2007,
+     "target_moh": 1.200670642417246,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3368,7 +3368,7 @@
      "m1_moh": 1.46,
      "m2_moh": 0.7,
      "m3_moh": 1.01,
-     "target_moh": 0.7792,
+     "target_moh": 0.6776025220462812,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3412,7 +3412,7 @@
      "m1_moh": 1.5,
      "m2_moh": 1.44,
      "m3_moh": 1.68,
-     "target_moh": 1.2494,
+     "target_moh": 1.2493756569865169,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3434,7 +3434,7 @@
      "m1_moh": 1.76,
      "m2_moh": 1.36,
      "m3_moh": 1.6,
-     "target_moh": 1.0177,
+     "target_moh": 0.8849641558170366,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3456,7 +3456,7 @@
      "m1_moh": 3.14,
      "m2_moh": 1.82,
      "m3_moh": 1.82,
-     "target_moh": 1.8907,
+     "target_moh": 2.2243806741563645,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3478,7 +3478,7 @@
      "m1_moh": 2.46,
      "m2_moh": 1.7,
      "m3_moh": 1.65,
-     "target_moh": 1.9533,
+     "target_moh": 2.2980060191876297,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3500,7 +3500,7 @@
      "m1_moh": 2.38,
      "m2_moh": 2.25,
      "m3_moh": 2.0,
-     "target_moh": 1.5,
+     "target_moh": 1.6594089964593053,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3522,7 +3522,7 @@
      "m1_moh": 3.84,
      "m2_moh": 4.13,
      "m3_moh": 3.33,
-     "target_moh": 2.176,
+     "target_moh": 2.5599596580326724,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3544,7 +3544,7 @@
      "m1_moh": 2.31,
      "m2_moh": 1.8,
      "m3_moh": 1.65,
-     "target_moh": 1.4623,
+     "target_moh": 1.4622701371298472,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3566,7 +3566,7 @@
      "m1_moh": 2.22,
      "m2_moh": 1.68,
      "m3_moh": 1.99,
-     "target_moh": 1.4491,
+     "target_moh": 1.4490758145557452,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3588,7 +3588,7 @@
      "m1_moh": 3.18,
      "m2_moh": 3.4,
      "m3_moh": 12.97,
-     "target_moh": 1.0218,
+     "target_moh": 1.0217720025649504,
      "_row_type": "store",
      "_spoc": "Yukti"
     },
@@ -3610,7 +3610,7 @@
      "m1_moh": 2.2966666666666664,
      "m2_moh": 1.8675,
      "m3_moh": 2.6916666666666664,
-     "target_moh": 1.4333500000000001,
+     "target_moh": 1.5156238566127997,
      "_row_type": "spoc_total",
      "_spoc": "Yukti"
     },
@@ -3698,7 +3698,7 @@
      "m1_moh": 2.0484615384615386,
      "m2_moh": 349.74307692307696,
      "m3_moh": 1391.9792307692305,
-     "target_moh": 1.3535041666666665,
+     "target_moh": 1.3992083665715844,
      "_row_type": "miniso_total",
      "_spoc": null
     }

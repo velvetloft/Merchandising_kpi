@@ -150,7 +150,10 @@ def load_moh_targets(path: str = MOH_TARGET_FILE) -> dict:
     df = _read_excel(path)
     code_col = _find_col(df, "store", "code") or _find_col(df, "store") or df.columns[0]
     base_col = _find_col(df, "base")
-    target_col = _find_col(df, "target")
+    target_col = (
+    _find_col(df, "target")
+    or _find_col(df, "tgt")
+    )
     if base_col is None and target_col is None:
         numeric = [c for c in df.columns if c != code_col
                    and pd.api.types.is_numeric_dtype(df[c])]
